@@ -9,7 +9,7 @@
  * @link        https://github.com/gerardocdc/facebook-like-box
  * @copyright	Copyright (c) 2012 Diaz-Caneja Consultores
  * @license		Creative Commons CC-BY-SA License (http://creativecommons.org/licenses/by-sa/3.0/)
- * @version     1.0
+ * @version     1.1
  * @filesource
  */
 
@@ -26,7 +26,7 @@
  * </code>
  *
  * @package		Facebook
- * @version     1.0
+ * @version     1.1
  * @since		Version 1.0
  */
 class FacebookLikeBox
@@ -277,14 +277,16 @@ class FacebookLikeBox
 	 */
 	public function renderJS()
 	{
-		$code = "<div id=\"fb-root\"></div>";
-		$code .= "<script>(function(d, s, id){ ";
-		$code .= "var js, fjs = d.getElementsByTagName(s)[0];";
-		$code .= "if (d.getElementById(id)) return;";
-		$code .= "js = d.createElement(s); js.id = id;";
-		$code .= "js.src = \"//connect.facebook.net/es_ES/all.js#xfbml=1\";";
-		$code .= "fjs.parentNode.insertBefore(js, fjs);";
-		$code .= "}(document, 'script', 'facebook-jssdk'));</script>";
+		$code = "<div id=\"fb-root\"></div>\r\n";
+		$code .= "<script>\r\n";
+		$code .= "(function(d, s, id){ \r\n";
+		$code .= "\tvar js, fjs = d.getElementsByTagName(s)[0];\r\n";
+		$code .= "\tif (d.getElementById(id)) return;\r\n";
+		$code .= "\tjs = d.createElement(s); js.id = id;\r\n";
+		$code .= "\tjs.src = \"//connect.facebook.net/es_ES/all.js#xfbml=1\";\r\n";
+		$code .= "\tfjs.parentNode.insertBefore(js, fjs);\r\n";
+		$code .= "\t}(document, 'script', 'facebook-jssdk'));\r\n";
+		$code .= "</script>\r\n";
 
 		echo $code;
 	}
@@ -306,7 +308,7 @@ class FacebookLikeBox
 		$code .= "data-colorscheme=\"".$this->getColorScheme()."\" ";
 		$code .= "data-force-wall=\"".var_export($this->getForceWall(),true)."\" ";
 		$code .= ">";
-		$code .= "</div>";
+		$code .= "</div>\r\n";
 
 		echo $code;
 	}
